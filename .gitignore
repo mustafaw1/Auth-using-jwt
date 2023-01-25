@@ -31,3 +31,5 @@ data/management/output
 scripts
 
 .env*
+
+.gitconfig
