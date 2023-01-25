@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__
+*.py[cod]
+*$py.class
+
+# Error logs
+*.log
+
+# dotenv
+*.env
+*.env.local
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# Others
+.DS_Store
+*.sqlite
+.vscode
+celerybeat-schedule.db
+.mypy_cache
+.coverage
+htmlcov
+# static files
+static
+
+# management command outputs
+data/management/output
+scripts
+
+.env*
