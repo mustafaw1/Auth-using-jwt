@@ -12,7 +12,7 @@ Steps to test auth-api
 }
 and send a post request.
 
-3:Now go to url http://127.0.0.1:8000/api/login to login as a user.After login jwt convert your plain-text passoword into a hash key using encryption algorithm and store it into database.
+3:Now go to url http://127.0.0.1:8000/api/login to login as a user.After login jwt convert your plain-text password into a hash key using encryption algorithm and store it into database.
 
 4:Got to url http://127.0.0.1:8000/api/user to get the user that is currently login.
 
