@@ -4,6 +4,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from users.serializer import UserSerializer
 from users.models import User
 from auth.settings import JWT_SECRET
+from auth.utils import ensure_logged_in
 import jwt, datetime
 
 
@@ -44,15 +45,7 @@ class LoginView(APIView):
 class UserView(APIView):
 
     def get(self, request):
-        token = request.COOKIES.get('jwt')
-        if not token:
-            raise AuthenticationFailed('unable to find jwt token')
-
-        try:
-            payload = jwt.decode(token, JWT_SECRET, algorithms=['HS256'])
-        except jwt.PyJWTError as e:
-            raise AuthenticationFailed(e.args[0])
-
+        payload = ensure_logged_in(request)
         user = User.objects.filter(id=payload['id']).first()
         serializer = UserSerializer(user)
         return Response(serializer.data)
