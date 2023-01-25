@@ -1,5 +1,7 @@
 # Auth-using-jwt
+
 Steps to test auth-api
+
 1:First of all run the server using python manage.py runserver
 
 2:Go to url http://127.0.0.1:8000/api/register and register by adding your credentials for example:
