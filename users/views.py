@@ -39,7 +39,6 @@ class LoginView(APIView):
         response.data = {
             'jwt': token
         }
-        print(token)
         return response
 
 class UserView(APIView):
@@ -56,7 +55,6 @@ class UserView(APIView):
 
         user = User.objects.filter(id=payload['id']).first()
         serializer = UserSerializer(user)
-        print(user)
         return Response(serializer.data)
 
 class LogoutView(APIView):
